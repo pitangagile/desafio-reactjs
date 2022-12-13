@@ -1,23 +1,12 @@
 import './App.css';
-import logo from './logo.svg';
+import StarWarsCard from './compornent/common/Card';
+
+const items = [{}]
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
+      <StarWarsCard title='A New Rope' year='25/05/1977' director='George Lucas' onclick={() => alert(`teste`)} />
     </div>
   );
 }
