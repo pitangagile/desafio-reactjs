@@ -1,22 +1,19 @@
 import { ApolloProvider, gql } from '@apollo/client';
-import { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.css';
 import StarWarsCard from './compornent/common/Card';
 import { client } from './service/Api';
 
-
-
-
 function App() {
+  const [getData, setGetData] = useState([]);
 
   useEffect(() => {
-    initial()
-  }, [initial])
+    initial();
+  }, []);
 
   function initial() {
-    client.query({
-      query: gql`
-      query Query {
+    const query = gql`
+      query {
         allFilms {
           films {
             title
@@ -31,21 +28,28 @@ function App() {
           }
         }
       }
-    `,
-    }).then((res) => console.log(res.data.allFilms.films))
+    `;
+
+    client
+      .query({
+        query,
+      })
+      .then((res) => setGetData(res.data.allFilms.films));
   }
-
-
 
   return (
     <ApolloProvider client={client}>
       <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
-        <div>
-
-        </div>
-
-        <StarWarsCard key="index" title="title" year='25/05/1977' director='George Lucas' onclick={() => alert(`teste`)} />
-
+        {getData &&
+          getData.map((item: { title: string; releaseDate: string; director: string; id: string; }, index: React.Key | null | undefined) => (
+            <StarWarsCard
+              key={index}
+              title={item.title}
+              year={item.releaseDate}
+              director={item.director}
+              onclick={() => alert(`item.${item.id}`)}
+            />
+          ))}
       </div>
     </ApolloProvider>
   );
