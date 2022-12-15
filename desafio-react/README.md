@@ -1,46 +1,50 @@
-# Getting Started with Create React App
+# desafio-reactjs
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Desafio
 
-## Available Scripts
+O desafio consiste em criar uma aplicação React que liste todos os filmes. Ao
+clicar em um item da lista, deve listar mais detalhes sobre o filme conforme as
+imagens ilustrativas abaixo:
 
-In the project directory, you can run:
+<div styles="display: flex">
+  <img src="https://user-images.githubusercontent.com/8798970/207090471-f784a5e6-7d80-44b2-9cab-67ed5deb0c1e.png" width="48%">
+  <img src="https://user-images.githubusercontent.com/8798970/207090630-a35253f6-921a-4243-a777-e46512878d73.png" width="48%">
+</div>
 
-### `npm start`
+## GraphQL API
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Utilize este GraphQL API:
+https://studio.apollographql.com/public/star-wars-swapi/home?variant=current
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Para retornar os dados deste desafio, utilize as queries `allFilms` e `film`.
 
-### `npm test`
+## Requisitos
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Typescript
+- GraphQL
+- Apollo Client (GraphQL)
+- React Router
+- Material UI
 
-### `npm run build`
+## Requisitos desejáveis
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Utilização de Hooks
+- Implementação de Testes
+- Aplicação responsiva
+- Componentização
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Etapas para submissão
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Ao finalizar a implementação, o candidato deverá enviar um pull request para o
+repositório (fork) e deixá-lo público para avaliação.
 
-### `npm run eject`
+**Segue o passo-a-passo:**
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+1. Fazer fork do respositório
+2. Implementar seu projeto no fork realizado
+3. Comitar e subir todas as alteraçes para o fork criado por você
+4. Enviar um pull request pelo Github
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Observação
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Não fazer push para este repositório.

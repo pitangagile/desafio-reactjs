@@ -7,7 +7,6 @@ const StarWarsCard = (props: { title: string; year: string; director: string; })
         {props.title} <br />
         {props.year}
       </Typography>
-
       <CardMedia component="img"
         height="140"
         width='160'
