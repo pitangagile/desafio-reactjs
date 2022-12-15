@@ -1,21 +1,18 @@
-import { Card, CardMedia, Typography } from '@mui/material';
 import Image from '../../assets/image/stawars.png';
+import * as S from './Styles';
 const StarWarsCard = (props: { title: string; year: string; director: string; }): JSX.Element => {
   return (
-    <Card sx={{ margin: 2 }} >
-      <Typography sx={{ paddingTop: 1, paddingLeft: 1 }} variant="subtitle1" gutterBottom component="div">
+    <S.CardMUI >
+      <S.TypographyMUI variant="subtitle1" gutterBottom >
         {props.title} <br />
         {props.year}
-      </Typography>
-      <CardMedia component="img"
-        height="140"
-        width='160'
-        sx={{ backgroundColor: 'black' }}
+      </S.TypographyMUI>
+      <S.CardMediaMUI
         image={Image} />
-      <Typography gutterBottom variant="body2" component="div" sx={{ paddingTop: 1, paddingLeft: 1 }}>
+      <S.TypoFooterMUI gutterBottom variant="body2" >
         Diretor: {props.director}
-      </Typography>
-    </Card >
+      </S.TypoFooterMUI>
+    </S.CardMUI>
 
   );
 }
