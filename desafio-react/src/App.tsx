@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import { FilmPage } from './pages/FilmPage';
-import StarWarHome from './pages/StarwarsPage';
+import { FilmPage } from './pages/FilmPage/FilmPage';
+import StarWarHome from './pages/StarWarsPage/StarwarsPage';
 const App = () => {
   return (
     <Router>

@@ -1,10 +1,19 @@
-import { ApolloClient, gql, InMemoryCache } from "@apollo/client";
-export const client = new ApolloClient({
-  uri: "https://swapi-graphql.netlify.app/.netlify/functions/index",
-  cache: new InMemoryCache(),
-});
+import {
+  ApolloClient,
+  gql,
+  InMemoryCache,
+  NormalizedCacheObject,
+} from "@apollo/client";
+import { SetStateAction } from "react";
 
-export const query = gql`
+const createApolloClient = () => {
+  return new ApolloClient({
+    uri: "https://swapi-graphql.netlify.app/.netlify/functions/index",
+    cache: new InMemoryCache(),
+  });
+};
+
+const query = gql`
   query {
     allFilms {
       films {
@@ -21,3 +30,16 @@ export const query = gql`
     }
   }
 `;
+export const initial = async (
+  client: ApolloClient<NormalizedCacheObject>,
+  setGetData: { (value: SetStateAction<never[]>): void; (arg0: any): void }
+) => {
+  try {
+    const res = await client.query({ query });
+    setGetData(res.data.allFilms.films);
+  } catch (err) {
+    console.error(err);
+  }
+};
+
+export const client = createApolloClient();
