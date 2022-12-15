@@ -1,8 +1,9 @@
 import { ApolloProvider } from '@apollo/client';
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import StarWarsCard from '../../compornent/common/Card';
 import { formatarDataBrasil } from '../../compornent/utils/FormataData';
 import { client, initial } from '../../service/Api';
+import { ErrorPage } from '../ErrorPage/ErrorPage';
 import * as S from './Styles';
 
 interface StarWarsData {
@@ -20,15 +21,17 @@ const StarWarHome = () => {
     initial(client, setGetData);
   }, []);
 
+
+
   return (
     <ApolloProvider client={client}>
       <S.Container>
-        {getData ?
-          getData.map((item: StarWarsData
+        {getData &&
+          getData.flatMap((item: StarWarsData
             , index: React.Key | null | undefined) => (
             <S.LinkStyled
               key={index}
-              to={`/${item.id}`}
+              to={`film/${item.id}`}
               state={[
                 item.openingCrawl,
                 item.producers,
@@ -44,7 +47,9 @@ const StarWarHome = () => {
                 director={item.director}
               />
             </S.LinkStyled>
-          )) : 'Error'}
+          )) || <ErrorPage />}
+
+
       </S.Container>
     </ApolloProvider >
   );

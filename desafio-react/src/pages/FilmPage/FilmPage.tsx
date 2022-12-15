@@ -42,7 +42,7 @@ export const FilmPage = () => {
               <S.BoldStyled>Produzido por:</S.BoldStyled>
               <ul>
                 {
-                  producers.map((producer: any, index: Key | null | undefined) => <li key={index}> {producer} </li>)
+                  producers.flatMap((producer: any, index: Key | null | undefined) => <li key={index}> {producer} </li>)
                 }
               </ul>
             </S.SpanStyled>

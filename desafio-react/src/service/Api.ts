@@ -13,7 +13,7 @@ const createApolloClient = () => {
   });
 };
 
-const query = gql`
+export const query = gql`
   query {
     allFilms {
       films {
@@ -30,6 +30,7 @@ const query = gql`
     }
   }
 `;
+
 export const initial = async (
   client: ApolloClient<NormalizedCacheObject>,
   setGetData: { (value: SetStateAction<never[]>): void; (arg0: any): void }
@@ -39,6 +40,7 @@ export const initial = async (
     setGetData(res.data.allFilms.films);
   } catch (err) {
     console.error(err);
+    window.location.href = "/404";
   }
 };
 
