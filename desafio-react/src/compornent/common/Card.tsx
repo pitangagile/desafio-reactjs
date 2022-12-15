@@ -1,13 +1,8 @@
 import { Card, CardMedia, Typography } from '@mui/material';
 import Image from '../../assets/image/stawars.png';
-
-
-
-export default function StarWarsCard(props: { title: string; year: string; director: string, onclick: () => void }): JSX.Element {
-
-
+const StarWarsCard = (props: { title: string; year: string; director: string; }): JSX.Element => {
   return (
-    <Card sx={{ margin: 2 }} onClick={() => { props.onclick() }}>
+    <Card sx={{ margin: 2 }} >
       <Typography sx={{ paddingTop: 1, paddingLeft: 1 }} variant="subtitle1" gutterBottom component="div">
         {props.title} <br />
         {props.year}
@@ -25,3 +20,4 @@ export default function StarWarsCard(props: { title: string; year: string; direc
 
   );
 }
+export default StarWarsCard
