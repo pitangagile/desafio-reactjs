@@ -5,8 +5,6 @@ import StarWarsCard from '../compornent/common/Card';
 import { formatarDataBrasil } from '../compornent/utils/FormataData';
 import { client, query } from '../service/Api';
 
-
-
 const StarWarHome = () => {
   const [getData, setGetData] = useState([]);
 

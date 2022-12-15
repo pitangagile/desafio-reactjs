@@ -3,5 +3,9 @@ export const FilmPage = () => {
   const location = useLocation();
   const data = location.state;
   console.log(data)
-  return <div>FilmPage: {data[1][0]}</div>;
+  return <>
+    FilmPage: {data[1][0]}
+    <br />
+    FilmPage: {data[1][1]}
+  </>
 };
