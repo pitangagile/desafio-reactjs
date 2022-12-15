@@ -4,6 +4,7 @@ export const Container = styled.div({
   display: "flex",
   flexDirection: "row",
   flexWrap: "wrap",
+  justifyContent: "center",
 });
 
 export const LinkStyled = styled(Link)`

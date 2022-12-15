@@ -5,9 +5,15 @@ import { formatarDataBrasil } from '../../compornent/utils/FormataData';
 import { client, initial } from '../../service/Api';
 import * as S from './Styles';
 
-
-
-
+interface StarWarsData {
+  title: string;
+  releaseDate: string;
+  director: string;
+  id: string;
+  openingCrawl: string;
+  producers: string;
+  episodeID: number;
+}
 const StarWarHome = () => {
   const [getData, setGetData] = useState([]);
   useEffect(() => {
@@ -18,15 +24,8 @@ const StarWarHome = () => {
     <ApolloProvider client={client}>
       <S.Container>
         {getData ?
-          getData.map((item: {
-            title: string;
-            releaseDate: string;
-            director: string;
-            id: string;
-            openingCrawl: string;
-            producers: string;
-            episodeID: number;
-          }, index: React.Key | null | undefined) => (
+          getData.map((item: StarWarsData
+            , index: React.Key | null | undefined) => (
             <S.LinkStyled
               key={index}
               to={`/${item.id}`}
