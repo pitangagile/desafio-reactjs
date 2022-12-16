@@ -8,7 +8,7 @@ const App = () => {
       <Routes>
         <Route path="*" element={<Navigate to="/404" replace />} />
         <Route path='/404' element={<ErrorPage />} />
-        <Route path='/' element={<StarWarHome />} errorElement={<ErrorPage />} />
+        <Route path='/' element={<StarWarHome />} />
         <Route path='/film/:id' element={<FilmPage />} />
       </Routes>
     </Router>)
