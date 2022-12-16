@@ -3,7 +3,6 @@ import { useEffect, useState } from 'react';
 import StarWarsCard from '../../compornent/common/Card';
 import { formatarDataBrasil } from '../../compornent/utils/FormataData';
 import { client, initial } from '../../service/Api';
-import { ErrorPage } from '../ErrorPage/ErrorPage';
 import * as S from './Styles';
 
 interface StarWarsData {
@@ -47,7 +46,7 @@ const StarWarHome = () => {
                 director={item.director}
               />
             </S.LinkStyled>
-          )) || <ErrorPage />}
+          ))}
 
 
       </S.Container>
