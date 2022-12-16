@@ -2,7 +2,9 @@
 
 ## Desafio
 
-O desafio consiste em criar uma aplicação React que liste todos os filmes. Ao clicar em um item da lista, deve listar mais detalhes sobre o filme conforme as imagens ilustrativas abaixo:
+O desafio consiste em criar uma aplicação React que liste todos os filmes. Ao
+clicar em um item da lista, deve listar mais detalhes sobre o filme conforme as
+imagens ilustrativas abaixo:
 
 <div styles="display: flex">
   <img src="https://user-images.githubusercontent.com/8798970/207090471-f784a5e6-7d80-44b2-9cab-67ed5deb0c1e.png" width="48%">
@@ -11,7 +13,8 @@ O desafio consiste em criar uma aplicação React que liste todos os filmes. Ao 
 
 ## GraphQL API
 
-Utilize este GraphQL API: https://studio.apollographql.com/public/star-wars-swapi/home?variant=current
+Utilize este GraphQL API:
+https://studio.apollographql.com/public/star-wars-swapi/home?variant=current
 
 Para retornar os dados deste desafio, utilize as queries `allFilms` e `film`.
 
@@ -32,7 +35,8 @@ Para retornar os dados deste desafio, utilize as queries `allFilms` e `film`.
 
 ## Etapas para submissão
 
-Ao finalizar a implementação, o candidato deverá enviar um pull request para o repositório (fork) e deixá-lo público para avaliação.
+Ao finalizar a implementação, o candidato deverá enviar um pull request para o
+repositório (fork) e deixá-lo público para avaliação.
 
 **Segue o passo-a-passo:**
 
